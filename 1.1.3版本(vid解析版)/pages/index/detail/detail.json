@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+      "txv-video": "plugin://tencentvideo/video"
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#121212",
+    "navigationBarTitleText": "打开视频通知",
+    "navigationBarTextStyle": "white"
+
+  }
+}

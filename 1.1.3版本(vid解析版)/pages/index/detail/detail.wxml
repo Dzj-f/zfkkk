@@ -1,0 +1,290 @@
+<!-- 加自定义头部，高度140 -->
+ <view style="height:40rpx;width:100%;background: #121212;position: fixed;top:0;z-index:1000000000"></view>
+ <view style="height:80rpx;width:100%;background: #121212;position: fixed;top:40rpx;z-index:1000000000">
+      <view class="dzytou" style="background: #121212;">
+         <!-- <image src="/image/tixingclose.png" style="width:40rpx;height:40rpx;" class="touimg"></image>  -->
+        <!-- <view style="color:#ffffff;font-weight: bold;display: inline-block;" catchtap="back">打开视频通知</view> -->
+        <image src="/image/back.jpg" style="height:90rpx;width:90rpx;display: inline-block" catchtap="back"></image>
+        <image src="/image/notice.jpg" style="height:90rpx;width:400rpx;display: inline-block" catchtap="notice"></image>
+      </view>       
+  </view>
+
+
+<view class="content" >
+  <!-------------------- 视频------------------------- -->
+  <!-- video高度700，videobox高度460，myvideo高度460， -->
+  <view wx:for="{{video}}" class="video">
+      <view class="videobox" >
+        <!-- 嵌入前贴广告 -->
+        <video
+            class="myvideo" 
+            id="myVideo"
+            unit-id="adunit-db1098f4915486a8"
+            src="{{item.videourl}}"
+            wx:if="{{item.videourl}}"      
+            autoplay="{{true}}"
+            isHiddenStop="{{true}}" 
+            isNeedMutex="{{true}}"
+            object-fit="{{contain}}"
+            bindended="playend"
+            bindtimeupdate="videoupdate"
+          ></video>
+
+          <view class="myvideoback" wx:if="{{myvideoback}}" ></view>
+
+          <view class="videoend" wx:if="{{videoend}}" >
+            <view style="justify-content: center;display:flex;">
+              <view style="margin-top:50rpx;justify-content: center;display: flex;width:560rpx;border-bottom: 2rpx solid #ffffff;height118rpx"> 
+                <image src="/image/replay.png" style="width:224rpx;height:80rpx;" catchtap="restartvideo"
+                  data-videourl="{{item.videourl}}" data-userimage="{{item.userimage}}"  data-title="{{item.title}}" 
+                  data-auth="{{item.auth}}"
+                ></image>
+                <image src="/image/next.png" style="width:224rpx;height:80rpx;margin-left:20rpx;margin-bottom:20rpx" 
+                catchtap="nextvideo"></image>
+              </view>       
+            </view>
+
+            <view style="justify-content: space-around;display: flex;margin:20rpx 80rpx;">
+             <view style="display: inline-block">
+               <image src="/image/logo.png" style="width:150rpx;height:150rpx;border-radius: 20rpx" catchtap="gofirst" ></image>
+               <view style="color:#ffffff">第一个程序</view>
+             </view>
+             <view style="display: inline-block">
+               <image src="/image/logo.png" style="width:150rpx;height:150rpx;border-radius: 20rpx" catchtap="gosecond"></image>
+               <view style="color:#ffffff">第二个程序</view>
+             </view>
+             <view style="display: inline-block">
+               <image src="/image/logo.png" style="width:150rpx;height:150rpx;border-radius: 20rpx" catchtap="gothird"></image>
+               <view style="color:#ffffff">第三个程序</view>
+             </view>
+              
+            </view>
+          </view>
+
+
+       <!-- vid版本，有些视频带广告 -->
+        <!-- <txv-video 
+            vid="{{item.videourl}}"
+            wx:if="{{item.videourl}}"  
+            playerid="tx1"     
+            autoplay="{{true}}"
+            isHiddenStop="{{true}}" 
+            isNeedMutex="{{true}}"
+            width="{{width}}"    
+            height="{{height}}" 
+            object-fit="{{contain}}"
+          ></txv-video> -->
+
+      </view>
+      
+      <!-- 口罩 -->
+      <image src="/image/zfdian.png" class="kouzhao" wx:if="{{kouzhao}}" catchtap="kouzhao"></image>
+
+
+    <!----------------------- 分享 ------------------->
+      <view class="sharebox">
+        <view class="shares" >        
+                    <button  class="haoyou" 
+                  open-type="share" style="background: url('https://www.otvllat.cn/public/img/zfhy.png') ;background-size: 320rpx 98rpx; background-repeat:no-repeat; ">        
+                  </button>   
+
+                  <button  class="sharequn" 
+                  open-type="share" style="background: url('https://www.otvllat.cn/public/img/zfqun.png') ;background-size: 320rpx 98rpx; background-repeat:no-repeat; ">         
+                  </button>
+                                  
+        </view>
+      </view>
+        <!-- 视频作者和标题 -->
+      <view class="usertop">
+          <image src="{{item.userimage}}" class="userimg"></image>
+            <view class="username"><text class="user_auth" wx:if="{{item.auth}}">{{item.auth}}</text></view> 
+            <image src="/image/zfaddhy.png" class="addhy" catchtap="zfaddhy" ></image>
+      </view>
+      <view class="videotitle"><text class="user_text" wx:if="{{item.title}}">{{item.title}}</text></view> 
+  </view>
+
+    <!------------- 前贴广告 ----------------->
+    <!-- <video 
+      unit-id="adunit-db1098f4915486a8"
+      src="xxx" 
+      class="qiantie"
+      bindadplay="onAdplay"
+      bindadload="onAdload"
+      bindadclose="onAdclose"
+      bindaderror="onAdError"
+      autoplay="true"
+      muted="true">
+      </video> -->
+
+      <ad 
+      class="shiping"
+      unit-id="adunit-2ce54e799e550394" 
+      ad-type="video" 
+      ad-theme="white"
+      ></ad>
+
+
+<view class="listfu">
+     <block wx:for="{{list}}"  data-index='{{index}}' bindtap="goDetail" wx:key='index'>
+            <view class="video-item">  
+
+                   <!-- banner图广告组件 -->
+
+                    <ad wx:if="{{index%4===0&index!=0}}" unit-id="adunit-abd75dd0c14dac1b"></ad>
+                    
+                     <!-- 视频列表主题 -->
+                     <view class="video-wraps" bindtap="goDetail" data-index='{{index}}' data-videourl='{{item.videourl}}'   url="" data-videotitle='{{item.title}}' data-auth="{{item.auth}}" data-userimage="{{item.userimage}}">
+                        <view class="video-wrap" > 
+                            <!-- 封面图片 -->
+                            <image  class="video-fmimage" lazyLoad="{{true}}" style="width:96%;" bindtap="goDetail"
+                            data-index='{{index}}' data-videourl='{{item.videourl}}'   url="" data-videotitle='{{item.title}}' data-auth="{{item.auth}}" data-userimage="{{item.userimage}}"
+                                src="{{item.fmimage}}">
+                            </image>                                     
+                        </view>
+
+                            <view class="num">
+                            <view class="number">推荐指数</view> 
+
+                            <image src="/image/start.png" style="width:40rpx;height:40rpx;" wx:if="{{zjnum==1}}" ></image>
+                            <view wx:if="{{zjnum==2}}" style="display: inline-block;margin-left: 10rpx" >
+                               <image src="/image/start.png" style="width:40rpx;height:40rpx;"></image>
+                               <image src="/image/start.png" style="width:40rpx;height:40rpx;"></image>
+                            </view> 
+                            <view wx:if="{{zjnum==3}}" style="display: inline-block;margin-left: 10rpx">
+                                <image src="/image/start.png" style="width:40rpx;height:40rpx;"></image>
+                                <image src="/image/start.png" style="width:40rpx;height:40rpx;"></image>
+                                <image src="/image/start.png" style="width:40rpx;height:40rpx;"></image>
+                            </view> 
+                            <view wx:if="{{zjnum==4}}" style="display: inline-block;margin-left: 10rpx">
+                                <image src="/image/start.png" style="width:40rpx;height:40rpx;"></image>
+                                <image src="/image/start.png" style="width:40rpx;height:40rpx;"></image>
+                                <image src="/image/start.png" style="width:40rpx;height:40rpx;"></image>
+                                <image src="/image/start.png" style="width:40rpx;height:40rpx;"></image>
+                            </view> 
+                            <view wx:if="{{zjnum==5}}" style="display: inline-block;margin-left: 10rpx">
+                                <image src="/image/start.png" style="width:40rpx;height:40rpx;"></image>
+                                <image src="/image/start.png" style="width:40rpx;height:40rpx;"></image>
+                                <image src="/image/start.png" style="width:40rpx;height:40rpx;"></image>
+                                <image src="/image/start.png" style="width:40rpx;height:40rpx;"></image>
+                                <image src="/image/start.png" style="width:40rpx;height:40rpx;"></image>
+                            </view>            
+                          </view>
+
+                         <!-- 标题和按钮 -->
+                         <image src="/image/tjfm/btnplay.png" class="btnplay"></image>
+                         <view class="title"><text class="title_text" wx:if="{{item.title}}">{{item.title}}</text></view> 
+                      </view>
+            </view>
+        </block>
+        <view style="text-align: center;">加载中...</view>
+  </view>
+
+  <!-- 右下角的点 -->
+  <image src="/image/zfdian.png" class="dian" catchtap="tiao"></image>
+
+</view>
+
+
+
+
+<!-- 添加客服 -->
+<view class='zfadds_kf' wx:if="{{addkf}}" >
+
+  <image class='zfadds'  src='/image/zfadds.png' mode='widthFix' bindtap='addkf'></image>
+  
+  <view class='colse' bindtap='closekf'><!--关闭按钮-->
+    <image class='colse-icon' src='/image/tipClose.png' mode='widthFix'></image>
+  </view>
+</view>
+
+
+<!-- 通知提醒 -->
+<view class="notice {{noticemove==1?'noticemove':'noticemove2'}}" wx:if="{{notice}}">
+<!-- <view class="notice"> -->
+    <view class="noticetext">
+      <view class="noticeimg"><image src="/image/logo.png"  style="width:70rpx;height:70rpx;"></image></view> 
+      <view class="twkkk">祝福看看看</view>
+      <view class="shengqing">申请</view>
+    </view>
+    <view class="fs">发送一次以下消息</view>
+    
+    <form bindsubmit="formSubmit" bindreset="formReset">
+        <view class="check">
+          <checkbox-group name="checkbox">
+            <label class="rad rads"><checkbox value="内容更新提醒" checked="checked"/>
+            <view class="text">
+              <view class="tx"> 内容更新提醒</view>
+              <image class="checkimg" src="/image/i.png" style="width:50rpx;height:50rpx"></image>        
+            </view>       
+            </label>
+            <label class="rad rads"><checkbox value="视频生成通知" checked="checked"/>
+              <view class="text">
+                <view class="tx"> 视频生成通知</view>
+              <image class="checkimg" src="/image/i.png" style="width:50rpx;height:50rpx"></image>     
+              </view>    
+            </label>
+            <label class="rad"><checkbox value="笑话故事更新通知" checked="checked"/>
+              <view class="text">
+                  <view class="tx"> 笑话故事更新通知</view>
+              <image class="checkimg" src="/image/i.png" style="width:50rpx;height:50rpx"></image>     
+                </view>     
+            </label>        
+          </checkbox-group>
+      </view>
+     
+      <view class="keepSelect">
+       <radio-group name="radio-group">
+          <label class="radkeep"><radio value="总是保持以上选择，不再询问" checked="checked"/>总是保持以上选择，不再询问</label>
+       </radio-group>
+      </view>
+
+    
+      <view class="btn">
+          <view class="bt">
+              <button class="quxiao"  catchtap="duihuaquxiao" formType="reset">取消</button>
+              <button type="primary" class="yunxu"  catchtap="duihuayunxu" formType="submit">允许</button>
+          </view>       
+      </view>
+    </form>
+       
+</view>
+
+
+<view  wx:if="{{dingyue}}"
+style="position: fixed;width:100vw;height:100vh;z-index:1000000000;display: flex;justify-content: center;align-items: center">
+ <view style="background:#000000;width:260rpx;height:260rpx;opacity: 0.8; color:#ffffff;text-align: center;border-radius: 10rpx">
+   <view style="margin-top:96rpx">
+      订阅成功
+   </view>   
+ </view>
+</view>
+
+
+
+<!-- 视频播放结束 -->
+<view class='play' wx:if="{{playend}}" >
+  
+  <view style="width: 80%;position: relative; ">
+    <image class='playend'  src='/image/playend.png' mode='widthFix' catchtap="playend"></image>
+  </view>
+
+  <!-- <image src="/image/ok.png" style="width:500rpx;height:100rpx" clsss="okpic"></image>  -->
+  
+  <view class='playcolse' bindtap='closeplayend'><!--关闭按钮-->
+    <image class='playcolse-icon' src='/image/tipClose.png' mode='widthFix'></image>
+  </view>
+</view>
+
+
+
+
+        
+      
+  
+
+
+
+
+
+
+
