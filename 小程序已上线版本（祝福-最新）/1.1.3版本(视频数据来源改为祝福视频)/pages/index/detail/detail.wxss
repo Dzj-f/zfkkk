@@ -1,0 +1,468 @@
+.content{
+  width: 100%;
+  /* position: absolute; */
+
+}
+.video{
+  /* height:760rpx; */
+  background: #121212;
+  position: relative;
+}
+videobox{
+  height: 460rpx;
+  width: 100%;
+  padding: 0;
+  background: #121212;
+}
+.txv{
+  width: 100%;
+  height: 100%;
+}
+/* 口罩 */
+.kouzhao{
+  position: absolute;
+  top:280rpx;
+  right:20rpx;
+  z-index: 10000;
+  width: 100rpx;
+  height:100rpx;
+  animation:myfirst 3s;
+	-webkit-animation:myfirst 3s infinite; /* Safari and Chrome */
+}
+
+@keyframes myfirst
+{
+    0%{}
+    25% {
+      transform:matrix(0.866,0.5,-0.5,0.866,0,0);
+      -ms-transform:matrix(0.866,0.5,-0.5,0.866,0,0); /* IE 9 */
+      -webkit-transform:matrix(0.866,0.5,-0.5,0.866,0,0); /* Safari and Chrome */
+    }
+    50% {
+      transform:matrix(0.866,-0.5,0.5,0.866,0,0);
+      -ms-transform:matrix(0.866,-0.5,0.5,0.866,0,0); /* IE 9 */
+      -webkit-transform:matrix(0.866,-0.5,0.5,0.866,0,0); /* Safari and Chrome */
+    }
+}
+
+/* 分享 */
+.sharebox{
+  background: #121212;
+  width: 100%;
+  height: 140rpx;
+  position: relative;
+}
+.haoyou{
+  display: inline-block;
+  width: 342rpx;
+  height:110rpx;
+  position: absolute;
+  left: 20rpx;
+  bottom: 0rpx;
+}
+.sharequn{
+  /* background: url('/image/tjfm/1.22.jpg'); */
+  display: inline-block;
+  width: 342rpx;
+  height:110rpx;
+  position: absolute;
+  right: 10rpx;
+  bottom: 0rpx;
+  -webkit-animation: mymove 3s infinite; 
+  animation: mymove 3s infinite;  
+}
+
+
+@-webkit-keyframes mymove {
+    50% {background-size: 340rpx 112rpx;}    /* Chrome, Safari, Opera */
+}
+
+/* Standard syntax */
+@keyframes mymove {
+    50% {background-size: 334rpx 112rpx;}
+}
+/* 视频作者和标题 */
+.usertop{
+  /* background: blue; */
+  position: relative;
+  height:118rpx;
+  background: #ffffff;
+}
+.userimg{
+  width:80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  position: absolute;
+  left:20rpx;
+  top:10rpx;
+}
+.username{
+  display: inline-block;
+  position: absolute;
+  left:110rpx;
+  top:28rpx;
+  color: #999999;
+}
+.user_text{
+  /* font-weight: bold; */
+  font-size: 50rpx;
+}
+.addhy{
+  width: 200rpx;
+  height:80rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 10rpx;
+}
+.videotitle{
+  background: #ffffff;
+  padding: 10rpx;
+  position: relative;
+}
+
+/* 视频广告 */
+.shipingbox{
+  width: 100%;
+  margin-top: 30rpx;
+  position: relative;
+}
+.shiping{
+  display: block;
+  width: 100%;
+}
+.gif{
+  width: 520rpx;
+  height:400rpx;
+  position: absolute;
+  z-index: 1000;
+  top: 40rpx;
+  left: 200rpx;
+  display: block;
+}
+
+
+/* 列表 */
+.video-list{
+  padding: 0;
+  width: 100%;
+}
+.video-wraps{
+  /* height:300rpx; */
+  width: 100%;
+  position: relative;
+  margin-bottom: 0rpx;
+  margin-top: 30rpx;
+}
+.video-wrap{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;   
+}
+.myvideo{
+  width:100%;
+  height:460rpx;
+  margin: 0;
+  background: #121212;
+}
+.myvideoback{
+  width:100%;
+  height:460rpx;
+  top: 0rpx;
+  background: #121212;
+  position: absolute;
+  opacity: 0.7
+}
+.videoend{
+  width:100%;
+  height:460rpx;
+  margin: 0;
+  position: absolute;
+  top:0rpx;
+  /* text-align: center;  */
+  
+}
+
+.title{
+  color: #ffffff;
+  position: absolute;
+  /* 视频高度是450rpx，父元素是458rpx，视频高度和位置都没调不了，所以把title也设置为距离父元素底部8rpx */
+  top:8rpx;
+  left: 28rpx;
+  z-index: 1000;
+  /* background:#161816; */
+  /* opacity: 0.7; */
+  width: 696rpx;
+  border-bottom-right-radius: 30rpx;
+  border-bottom-left-radius: 30rpx;
+  text-align: center;
+}
+.title_text{
+  /* margin-left:60rpx; */
+  display: inline-block;
+  margin-bottom: 10rpx;
+  font-weight: bold;
+  color: white;
+  font-size: 46rpx;
+}
+.btnplay{
+  position: absolute;
+  top: 155rpx;
+  left: 305rpx;
+  z-index: 1000;
+  width:128rpx;
+  height: 128rpx;
+}
+
+.num{
+  color: #ffffff;
+  position: absolute;
+  bottom:18rpx;
+  left: 26rpx;
+  z-index: 1000;
+  width: 400rpx;
+  text-align: left;
+  display: inline-block;
+}
+.number{
+  display: inline-block;
+}
+
+
+.video-fmimage{
+  border-radius: 30rpx;
+  width:100%;
+  margin: 0;
+  padding: 0;
+
+}
+
+.dian{
+  position: fixed;
+  bottom: 100rpx;
+  right:20rpx;
+  width: 100rpx;
+  height:100rpx;
+}
+
+.zfaddhy{
+  position: fixed;
+  top:200rpx;
+}
+/* 添加客服 */
+.zfadds_kf{
+  width:100vw;
+  height: 100vh;
+  position: fixed;
+  top:0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100000;
+}
+.zfadds{
+  width: 80%;                     /*弹窗广告图片的大小*/
+}
+.colse{
+  position: relative;
+}
+.colse-icon{
+  display: flex;
+  width: 30px;
+  position: absolute;              /*设置为绝对定位，调整关闭按钮的位置*/
+  top:-200px;
+  right: 0px;
+}
+
+/* 通知提醒 */
+.notice{
+  position: fixed;
+  z-index: 999999;
+  left:0;
+  top: 100vh;
+  width: 100%;
+  height:70vh;
+  background: #ffffff;
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+  display: inline-block;
+}
+.noticemove{
+  position: fixed;
+  z-index: 999999;
+  left:0;
+  top: 30vh;
+  width: 100%;
+  height:70vh;
+  background: #ffffff;
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+  display: inline-block;
+  animation:noticemove 1s infinite;
+  animation-iteration-count:1;
+}
+.noticemove2{
+  position: fixed;
+  z-index: 999999;
+  left:0;
+  top: 100vh;
+  width: 100%;
+  height:70vh;
+  background: #ffffff;
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+  display: inline-block;
+  animation:noticemove2 1s infinite;
+  animation-iteration-count:1;
+}
+
+
+@keyframes noticemove
+{
+	from {top:100vh;}
+	to {top:34vh;}
+}
+@keyframes noticemove2
+{
+	from {top:34vh;}
+	to {top:100vh;}
+}
+
+.noticetext{
+  height: auto;
+  position: relative;
+}
+.noticeimg{
+  width:70rpx;
+  height:70rpx;
+  margin-top:30rpx;
+  margin-left:60rpx;
+  display: inline-block;
+ 
+}
+.twkkk{
+  display: inline-block;
+  width: 260rpx;
+  text-align: center;
+  font-size: 40rpx;
+  color: #000000;
+  font-weight: bold;
+  height: 70rpx;
+  top:36rpx;
+  left: 118rpx;
+  position: absolute
+}
+.shengqing{
+  display: inline-block;
+  color: #000000;
+  font-size: 40rpx;
+  font-weight: bold;
+   height: 70rpx;
+   top:36rpx;
+   left:360rpx;
+  position: absolute
+}
+.btn{
+  position: absolute;
+  bottom: 100rpx;
+  width: 100%;
+}
+.bt{
+  display: flex;
+  justify-content: space-around;
+}
+.quxiao{
+  color: green;
+  display: inline-block;
+  width: 300rpx!important;
+}
+.yunxu{
+  display: inline-block;
+  width: 300rpx!important;
+  margin-left:10rpx!important;
+}
+.fs{
+  color: #000000;
+  margin-left: 60rpx;
+  margin-top: 60rpx;
+  font-size: 40rpx;
+}
+.text{
+  border-bottom: #e1e1e1 solid 2rpx;
+  display: inline-block;
+  width: 86%;
+  height: 100rpx;
+  margin-bottom: 30rpx;
+  margin-left:1%;
+}
+.tx{
+   display: inline-block;
+}
+.checkimg{
+  display: inline-block;
+  mrgin-top:50rpx;
+  position: absolute;
+  right:60rpx;
+}
+.rad{
+  display: block;
+  height:100rpx;
+  width: 100%;
+  margin-top:30rpx;
+  color: #757272;
+  font-size: 40rpx;
+}
+.check{
+  margin-left:60rpx;
+  margin-top: 20rpx;
+  border-bottom: #e1e1e1 solid 2rpx;
+  border-top: #e1e1e1 solid 2rpx;
+  width:86%;
+}
+.keepSelect{
+  position: absolute;
+  bottom: 20rpx;
+  text-align: center;
+  width: 100%;
+}
+.radkeep{
+  display: flex;
+  justify-content: center;
+  color: #757272;
+}
+
+/* 播放结束 */
+.play{
+  width:100vw;
+  height: 100vh;
+  position: fixed;
+  top:0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100000;
+}
+.okpic{
+  position: absolute;
+  top:-130rpx;
+
+}
+.playend{
+   /*弹窗广告图片的大小*/
+  /* width: 80%;                     */
+  position: relative;
+}
+.playcolse{
+  position: relative;
+  width: 100%;
+  height: 30px;
+}
+.playcolse-icon{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: absolute;              /*设置为绝对定位，调整关闭按钮的位置*/
+  /* top:-170px; */
+  right: 0px;
+}
